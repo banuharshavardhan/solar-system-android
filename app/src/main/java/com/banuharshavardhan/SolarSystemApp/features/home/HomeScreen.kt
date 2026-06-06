@@ -1,21 +1,9 @@
 package com.banuharshavardhan.SolarSystemApp
 
-import androidx.compose.animation.animateColorAsState
-import androidx.compose.animation.core.RepeatMode
-import androidx.compose.animation.core.animateFloat
-import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.infiniteRepeatable
-import androidx.compose.animation.core.rememberInfiniteTransition
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.offset
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -29,10 +17,9 @@ import androidx.compose.ui.unit.sp
 import com.banuharshavardhan.SolarSystemApp.features.home.components.SegmentedControl
 import com.banuharshavardhan.SolarSystemApp.features.home.components.SpaceTitle
 import com.banuharshavardhan.SolarSystemApp.features.home.enums.HomeSection
-import com.banuharshavardhan.SolarSystemApp.features.home.screens.GridScreen
-import com.banuharshavardhan.SolarSystemApp.features.home.screens.ListScreen
-import com.banuharshavardhan.SolarSystemApp.features.home.screens.SpaceScreen
-import kotlinx.coroutines.selects.select
+import com.banuharshavardhan.SolarSystemApp.features.home.screens.GridSection
+import com.banuharshavardhan.SolarSystemApp.features.home.screens.ListSection
+import com.banuharshavardhan.SolarSystemApp.features.home.screens.SpaceSection
 
 
 @Composable
@@ -59,9 +46,9 @@ fun HomeScreen() {
             selectedSegment = it
         }
         when (selectedSegment) {
-            HomeSection.GRID -> GridScreen()
-            HomeSection.SPACE -> SpaceScreen()
-            HomeSection.LIST -> ListScreen()
+            HomeSection.GRID -> GridSection()
+            HomeSection.SPACE -> SpaceSection()
+            HomeSection.LIST -> ListSection()
         }
     }
 }
