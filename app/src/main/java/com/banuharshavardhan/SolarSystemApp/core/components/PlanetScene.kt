@@ -52,7 +52,7 @@ fun PlanetScene(
             radius = 1.0f,
             materialInstance = materialInstance
         ).apply {
-            position = Position(0f, 0f, -4f)
+            position = Position(0f, 0f, -3f)
             onFrame = {
                 quaternion *= Quaternion.fromEuler(
                     Float3(0f, planet.selfRotationSpeed, 0f)
