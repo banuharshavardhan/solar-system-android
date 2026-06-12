@@ -7,6 +7,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.banuharshavardhan.SolarSystemApp.core.models.Planet
+import dev.romainguy.kotlin.math.Float3
+import dev.romainguy.kotlin.math.Quaternion
 
 import io.github.sceneview.Scene
 import io.github.sceneview.math.Position
@@ -51,6 +53,11 @@ fun PlanetScene(
             materialInstance = materialInstance
         ).apply {
             position = Position(0f, 0f, -4f)
+            onFrame = {
+                quaternion *= Quaternion.fromEuler(
+                    Float3(0f, planet.selfRotationSpeed, 0f)
+                )
+            }
         }
     }
 
