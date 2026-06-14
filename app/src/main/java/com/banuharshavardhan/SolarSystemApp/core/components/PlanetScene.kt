@@ -1,11 +1,9 @@
 package com.banuharshavardhan.SolarSystemApp.core.components
 
-import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.unit.dp
 import com.banuharshavardhan.SolarSystemApp.core.models.Planet
 import dev.romainguy.kotlin.math.Float3
 import dev.romainguy.kotlin.math.Quaternion
@@ -62,11 +60,12 @@ fun PlanetScene(
     }
 
     Scene(
-        modifier = modifier.size(250.dp),
+        modifier = modifier,
         engine = engine,
         environment = environment,
         mainLightNode = mainLightNode,
         cameraManipulator = cameraManipulator,
-        childNodes = listOf(sphereNode)
+        childNodes = listOf(sphereNode),
+        isOpaque = true
     )
 }
