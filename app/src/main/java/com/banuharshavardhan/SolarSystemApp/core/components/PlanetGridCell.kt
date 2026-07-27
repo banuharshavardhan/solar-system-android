@@ -1,9 +1,9 @@
 package com.banuharshavardhan.SolarSystemApp.core.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,18 +15,26 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.banuharshavardhan.SolarSystemApp.core.models.Planet
+import com.banuharshavardhan.SolarSystemApp.navigation.Destinations
 
 @Composable
 fun PlanetGridCell(
     planet: Planet,
     planetSize: Dp,
+    navController: NavController,
     modifier: Modifier = Modifier
 ) {
     Box(
         modifier = modifier
             .clip(RoundedCornerShape(20.dp))
             .background(Color.White.copy(alpha = 0.05f))
+            .clickable {
+                navController.navigate(
+                    Destinations.planetDetails(planet.name)
+                )
+            }
     ) {
         Column(
             modifier = modifier

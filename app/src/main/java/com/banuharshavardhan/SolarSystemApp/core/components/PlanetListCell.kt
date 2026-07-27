@@ -2,6 +2,7 @@ package com.banuharshavardhan.SolarSystemApp.core.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -23,12 +24,15 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.banuharshavardhan.SolarSystemApp.core.models.Planet
+import com.banuharshavardhan.SolarSystemApp.navigation.Destinations
 
 @Composable
 fun PlanetListCell(
     planet: Planet,
     planetSize: Dp,
+    navController: NavController,
     modifier: Modifier
 ) {
     Row(
@@ -36,7 +40,12 @@ fun PlanetListCell(
             .fillMaxWidth()
             .clip(RoundedCornerShape(20.dp))
             .background(Color.White.copy(alpha = 0.05f))
-            .padding(16.dp),
+            .padding(16.dp)
+            .clickable {
+                navController.navigate(
+                    Destinations.planetDetails(planet.name)
+                )
+            },
         verticalAlignment = Alignment.CenterVertically
     ) {
         PlanetScene(

@@ -9,11 +9,12 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.banuharshavardhan.SolarSystemApp.core.components.PlanetListCell
 import com.banuharshavardhan.SolarSystemApp.core.data.Planets
 
 @Composable
-fun ListSection() {
+fun ListSection(navController: NavController) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.spacedBy(16.dp),
@@ -26,6 +27,7 @@ fun ListSection() {
             PlanetListCell(
                 planet = planet,
                 planetSize = 150.dp,
+                navController = navController,
                 modifier = Modifier.fillMaxWidth()
             )
         }
