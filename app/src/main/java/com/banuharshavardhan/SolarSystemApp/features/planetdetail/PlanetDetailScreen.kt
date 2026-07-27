@@ -25,10 +25,8 @@ import com.banuharshavardhan.SolarSystemApp.core.components.AboutSection
 import com.banuharshavardhan.SolarSystemApp.core.components.DiscoverySection
 import com.banuharshavardhan.SolarSystemApp.core.components.EnvironmentSection
 import com.banuharshavardhan.SolarSystemApp.core.components.HeroSection
-import com.banuharshavardhan.SolarSystemApp.core.components.InfoRow
 import com.banuharshavardhan.SolarSystemApp.core.components.PhysicalPropertiesSection
 import com.banuharshavardhan.SolarSystemApp.core.components.QuickStatSection
-import com.banuharshavardhan.SolarSystemApp.core.components.SectionHeader
 import com.banuharshavardhan.SolarSystemApp.core.data.Planets
 
 @OptIn(ExperimentalMaterial3Api::class)

@@ -1,9 +1,12 @@
 package com.banuharshavardhan.SolarSystemApp.core.components
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.banuharshavardhan.SolarSystemApp.core.models.Planet
 
@@ -11,33 +14,34 @@ import com.banuharshavardhan.SolarSystemApp.core.models.Planet
 fun QuickStatSection(
     planet: Planet
 ) {
-    LazyVerticalGrid(
-        columns = GridCells.Fixed(2),
-        horizontalArrangement = Arrangement.spacedBy(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
-        userScrollEnabled = false
+    Column(
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        item {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
             QuickStatCard(
+                modifier = Modifier.weight(1f),
                 value = "${planet.orbitalSpeedKmPerSecond} km/s",
                 label = "Speed"
             )
-        }
-        item {
             QuickStatCard(
+                modifier = Modifier.weight(1f),
                 value = "${planet.distanceFromSunMillionKm} million km",
                 label = "Distance"
             )
         }
-        item {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
             QuickStatCard(
+                modifier = Modifier.weight(1f),
                 value = "${planet.gravity}",
                 label = "Gravity"
             )
-        }
-        item {
             QuickStatCard(
-                value = planet.moonCount.toString(),
+                modifier = Modifier.weight(1f),
+                value = "${planet.moonCount}",
                 label = "Moons"
             )
         }

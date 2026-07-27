@@ -9,21 +9,17 @@ fun DiscoverySection(
     planet: Planet
 ) {
     Column {
-
         SectionHeader(
             title = "Discovery"
         )
-
         InfoRow(
             label = "Discovered By",
             value = planet.discoveredBy
         )
-
         InfoRow(
             label = "Discovery Year",
             value = planet.discoveryYear
         )
-
         InfoRow(
             label = "Planet Type",
             value = planet.planetType
