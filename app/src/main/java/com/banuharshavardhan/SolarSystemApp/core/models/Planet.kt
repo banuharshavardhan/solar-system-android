@@ -17,5 +17,11 @@ data class Planet(
 
     val dayLengthHours: Double,
     val yearLengthDays: Double,
-    val moonCount: Int
+    val moonCount: Int,
+
+    val discoveredBy: String,
+    val discoveryYear: String,
+
+    val planetType: String,
+    val atmosphere: String
 )

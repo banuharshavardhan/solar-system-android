@@ -1,9 +1,11 @@
 package com.banuharshavardhan.SolarSystemApp.features.planetdetail
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material.icons.Icons
@@ -16,10 +18,18 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.banuharshavardhan.SolarSystemApp.core.components.AboutSection
+import com.banuharshavardhan.SolarSystemApp.core.components.DiscoverySection
+import com.banuharshavardhan.SolarSystemApp.core.components.EnvironmentSection
+import com.banuharshavardhan.SolarSystemApp.core.components.HeroSection
+import com.banuharshavardhan.SolarSystemApp.core.components.InfoRow
+import com.banuharshavardhan.SolarSystemApp.core.components.PhysicalPropertiesSection
+import com.banuharshavardhan.SolarSystemApp.core.components.QuickStatSection
+import com.banuharshavardhan.SolarSystemApp.core.components.SectionHeader
+import com.banuharshavardhan.SolarSystemApp.core.data.Planets
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -27,6 +37,9 @@ fun PlanetDetailScreen(
     planetName: String,
     navController: NavController
 ) {
+    val planet = Planets.all.first {
+        it.name == planetName
+    }
     Scaffold(
         topBar = {
             TopAppBar(
@@ -57,19 +70,36 @@ fun PlanetDetailScreen(
             )
         }
     ) { innerPadding ->
-        Box(
+        LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color.Black)
-                .padding(innerPadding),
-            contentAlignment = Alignment.Center,
+                .padding(innerPadding)
+                .background(Color.Black),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            contentPadding = PaddingValues(
+                horizontal = 20.dp,
+                vertical = 24.dp
+            ),
+            verticalArrangement = Arrangement.spacedBy(24.dp)
         ) {
-            Text(
-                text = planetName,
-                color = Color.White,
-                fontSize = 32.sp
-            )
+            item {
+                HeroSection(planet)
+            }
+            item {
+                QuickStatSection(planet)
+            }
+            item {
+                PhysicalPropertiesSection(planet)
+            }
+            item {
+                EnvironmentSection(planet)
+            }
+            item {
+                DiscoverySection(planet)
+            }
+            item {
+                AboutSection(planet)
+            }
         }
     }
-
 }

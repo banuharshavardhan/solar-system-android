@@ -19,7 +19,11 @@ object Planets {
         surfaceArea = "74.8 million km²",
         dayLengthHours = 1407.6,
         yearLengthDays = 88.0,
-        moonCount = 0
+        moonCount = 0,
+        discoveredBy = "Known since ancient times",
+        discoveryYear = "Prehistory",
+        planetType = "Terrestrial Planet",
+        atmosphere = "Thin exosphere of Oxygen, Sodium, Hydrogen, Helium and Potassium"
     )
 
     val venus = Planet(
@@ -36,7 +40,11 @@ object Planets {
         surfaceArea = "460.2 million km²",
         dayLengthHours = 5832.5,
         yearLengthDays = 224.7,
-        moonCount = 0
+        moonCount = 0,
+        discoveredBy = "Known since ancient times",
+        discoveryYear = "Prehistory",
+        planetType = "Terrestrial Planet",
+        atmosphere = "Carbon Dioxide (96.5%), Nitrogen (3.5%)"
     )
 
     val earth = Planet(
@@ -53,7 +61,11 @@ object Planets {
         surfaceArea = "510.1 million km²",
         dayLengthHours = 24.0,
         yearLengthDays = 365.25,
-        moonCount = 1
+        moonCount = 1,
+        discoveredBy = "Known since ancient times",
+        discoveryYear = "Prehistory",
+        planetType = "Terrestrial Planet",
+        atmosphere = "Nitrogen (78%), Oxygen (21%), Argon, Carbon Dioxide"
     )
 
     val mars = Planet(
@@ -70,7 +82,11 @@ object Planets {
         surfaceArea = "144.8 million km²",
         dayLengthHours = 24.6,
         yearLengthDays = 687.0,
-        moonCount = 2
+        moonCount = 2,
+        discoveredBy = "Known since ancient times",
+        discoveryYear = "Prehistory",
+        planetType = "Terrestrial Planet",
+        atmosphere = "Carbon Dioxide (95%), Nitrogen, Argon"
     )
 
     val jupiter = Planet(
@@ -87,7 +103,11 @@ object Planets {
         surfaceArea = "61.42 billion km²",
         dayLengthHours = 9.9,
         yearLengthDays = 4332.6,
-        moonCount = 95
+        moonCount = 95,
+        discoveredBy = "Known since ancient times",
+        discoveryYear = "Prehistory",
+        planetType = "Gas Giant",
+        atmosphere = "Hydrogen (90%), Helium (10%)"
     )
 
     val saturn = Planet(
@@ -104,7 +124,11 @@ object Planets {
         surfaceArea = "42.7 billion km²",
         dayLengthHours = 10.7,
         yearLengthDays = 10759.0,
-        moonCount = 146
+        moonCount = 146,
+        discoveredBy = "Known since ancient times",
+        discoveryYear = "Prehistory",
+        planetType = "Gas Giant",
+        atmosphere = "Hydrogen (96%), Helium (3%)"
     )
 
     val uranus = Planet(
@@ -121,7 +145,11 @@ object Planets {
         surfaceArea = "8.116 billion km²",
         dayLengthHours = 17.2,
         yearLengthDays = 30688.5,
-        moonCount = 28
+        moonCount = 28,
+        discoveredBy = "William Herschel",
+        discoveryYear = "1781",
+        planetType = "Ice Giant",
+        atmosphere = "Hydrogen, Helium, Methane"
     )
 
     val neptune = Planet(
@@ -138,7 +166,11 @@ object Planets {
         surfaceArea = "7.619 billion km²",
         dayLengthHours = 16.1,
         yearLengthDays = 60182.0,
-        moonCount = 16
+        moonCount = 16,
+        discoveredBy = "Johann Galle",
+        discoveryYear = "1846",
+        planetType = "Ice Giant",
+        atmosphere = "Hydrogen, Helium, Methane"
     )
 
     val all = listOf(
