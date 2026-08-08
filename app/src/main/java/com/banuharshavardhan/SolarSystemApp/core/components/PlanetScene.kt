@@ -1,6 +1,7 @@
 package com.banuharshavardhan.SolarSystemApp.core.components
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.key
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -27,13 +28,16 @@ fun PlanetScene(
     val cameraManipulator = rememberCameraManipulator()
 
     val texture = remember(resources.engine) {
-        ImageTexture.Builder()
-            .bitmap(
-                context = context,
-                drawableResId = planet.textureRes
-            )
-            .build(resources.engine)
+        resources.textures.getOrPut(planet.textureRes) {
+            ImageTexture.Builder()
+                .bitmap(
+                    context = context,
+                    drawableResId = planet.textureRes
+                )
+                .build(resources.engine)
+        }
     }
+
     val materialInstance = remember(resources.materialLoader, texture) {
         resources.materialLoader.createTextureInstance(texture)
     }
@@ -53,13 +57,15 @@ fun PlanetScene(
         }
     }
 
-    Scene(
-        modifier = modifier,
-        engine = resources.engine,
-        environment = resources.environment,
-        mainLightNode = mainLightNode,
-        cameraManipulator = cameraManipulator,
-        childNodes = listOf(sphereNode),
-        isOpaque = true
-    )
+    key(planet.name) {
+        Scene(
+            modifier = modifier,
+            engine = resources.engine,
+            environment = resources.environment,
+            mainLightNode = mainLightNode,
+            cameraManipulator = cameraManipulator,
+            childNodes = listOf(sphereNode),
+            isOpaque = true
+        )
+    }
 }
