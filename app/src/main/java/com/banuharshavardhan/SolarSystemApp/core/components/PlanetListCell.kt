@@ -25,11 +25,13 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.banuharshavardhan.SolarSystemApp.core.data.PlanetSceneResources
 import com.banuharshavardhan.SolarSystemApp.core.models.Planet
 import com.banuharshavardhan.SolarSystemApp.navigation.Destinations
 
 @Composable
 fun PlanetListCell(
+    resources: PlanetSceneResources,
     planet: Planet,
     planetSize: Dp,
     navController: NavController,
@@ -49,6 +51,7 @@ fun PlanetListCell(
         verticalAlignment = Alignment.CenterVertically
     ) {
         PlanetScene(
+            resources = resources,
             planet = planet,
             modifier = Modifier.size(planetSize)
         )

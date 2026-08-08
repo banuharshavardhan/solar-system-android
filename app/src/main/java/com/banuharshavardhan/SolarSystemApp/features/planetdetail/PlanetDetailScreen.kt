@@ -27,13 +27,15 @@ import com.banuharshavardhan.SolarSystemApp.core.components.EnvironmentSection
 import com.banuharshavardhan.SolarSystemApp.core.components.HeroSection
 import com.banuharshavardhan.SolarSystemApp.core.components.PhysicalPropertiesSection
 import com.banuharshavardhan.SolarSystemApp.core.components.QuickStatSection
+import com.banuharshavardhan.SolarSystemApp.core.data.PlanetSceneResources
 import com.banuharshavardhan.SolarSystemApp.core.data.Planets
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PlanetDetailScreen(
+    navController: NavController,
+    resources: PlanetSceneResources,
     planetName: String,
-    navController: NavController
 ) {
     val planet = Planets.all.first {
         it.name == planetName
@@ -81,7 +83,10 @@ fun PlanetDetailScreen(
             verticalArrangement = Arrangement.spacedBy(24.dp)
         ) {
             item {
-                HeroSection(planet)
+                HeroSection(
+                    resources,
+                    planet
+                )
             }
             item {
                 QuickStatSection(planet)

@@ -11,10 +11,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.banuharshavardhan.SolarSystemApp.core.components.PlanetListCell
+import com.banuharshavardhan.SolarSystemApp.core.data.PlanetSceneResources
 import com.banuharshavardhan.SolarSystemApp.core.data.Planets
 
 @Composable
-fun ListSection(navController: NavController) {
+fun ListSection(
+    navController: NavController,
+    resources: PlanetSceneResources
+) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.spacedBy(16.dp),
@@ -25,6 +29,7 @@ fun ListSection(navController: NavController) {
             key = { it.name }
         ) { planet ->
             PlanetListCell(
+                resources = resources,
                 planet = planet,
                 planetSize = 150.dp,
                 navController = navController,

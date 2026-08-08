@@ -12,10 +12,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.banuharshavardhan.SolarSystemApp.core.data.PlanetSceneResources
 import com.banuharshavardhan.SolarSystemApp.core.models.Planet
 
 @Composable
 fun HeroSection(
+    resources: PlanetSceneResources,
     planet: Planet
 ) {
     Column(
@@ -23,6 +25,7 @@ fun HeroSection(
         verticalArrangement = Arrangement.Center
     ) {
         PlanetScene(
+            resources,
             planet,
             modifier = Modifier.size(360.dp)
         )

@@ -11,15 +11,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.banuharshavardhan.SolarSystemApp.core.components.PlanetGridCell
+import com.banuharshavardhan.SolarSystemApp.core.data.PlanetSceneResources
 import com.banuharshavardhan.SolarSystemApp.core.data.Planets
 
 @Composable
-fun GridSection(navController: NavController) {
+fun GridSection(
+    navController: NavController,
+    resources: PlanetSceneResources
+) {
     BoxWithConstraints {
-
         val spacing = 16.dp
         val cellWidth = (maxWidth - spacing) / 2
-
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
             verticalArrangement = Arrangement.spacedBy(spacing),
@@ -27,6 +29,7 @@ fun GridSection(navController: NavController) {
         ) {
             items(Planets.all) { planet ->
                 PlanetGridCell(
+                    resources = resources,
                     planet = planet,
                     planetSize = cellWidth,
                     navController = navController,
