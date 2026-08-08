@@ -1,5 +1,6 @@
 package com.banuharshavardhan.SolarSystemApp.features.home.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,11 +14,12 @@ import androidx.navigation.NavController
 import com.banuharshavardhan.SolarSystemApp.core.components.PlanetListCell
 import com.banuharshavardhan.SolarSystemApp.core.data.PlanetSceneResources
 import com.banuharshavardhan.SolarSystemApp.core.data.Planets
+import com.banuharshavardhan.SolarSystemApp.core.models.Planet
 
 @Composable
 fun ListSection(
-    navController: NavController,
-    resources: PlanetSceneResources
+    resources: PlanetSceneResources,
+    onClick: (Planet) -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -30,8 +32,11 @@ fun ListSection(
                 resources = resources,
                 planet = planet,
                 planetSize = 150.dp,
-                navController = navController,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable {
+                        onClick(planet)
+                    }
             )
         }
     }

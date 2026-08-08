@@ -1,5 +1,7 @@
 package com.banuharshavardhan.SolarSystemApp.navigation
 
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -25,7 +27,19 @@ fun AppNavigation() {
             )
         }
         composable(
-            route = Destinations.PLANET_DETAILS
+            route = Destinations.PLANET_DETAILS,
+            enterTransition = {
+                EnterTransition.None
+            },
+            exitTransition = {
+                ExitTransition.None
+            },
+            popEnterTransition = {
+                EnterTransition.None
+            },
+            popExitTransition = {
+                ExitTransition.None
+            }
         ) { backStackEntry ->
             val planetName = backStackEntry.arguments?.getString("planetName") ?: ""
             PlanetDetailScreen(

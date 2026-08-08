@@ -24,17 +24,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import com.banuharshavardhan.SolarSystemApp.core.data.PlanetSceneResources
 import com.banuharshavardhan.SolarSystemApp.core.models.Planet
-import com.banuharshavardhan.SolarSystemApp.navigation.Destinations
 
 @Composable
 fun PlanetListCell(
     resources: PlanetSceneResources,
     planet: Planet,
     planetSize: Dp,
-    navController: NavController,
     modifier: Modifier
 ) {
     Row(
@@ -42,12 +39,7 @@ fun PlanetListCell(
             .fillMaxWidth()
             .clip(RoundedCornerShape(20.dp))
             .background(Color.White.copy(alpha = 0.05f))
-            .padding(16.dp)
-            .clickable {
-                navController.navigate(
-                    Destinations.planetDetails(planet.name)
-                )
-            },
+            .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         PlanetScene(

@@ -1,5 +1,6 @@
 package com.banuharshavardhan.SolarSystemApp.features.home.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
@@ -10,15 +11,15 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import com.banuharshavardhan.SolarSystemApp.core.components.PlanetGridCell
 import com.banuharshavardhan.SolarSystemApp.core.data.PlanetSceneResources
 import com.banuharshavardhan.SolarSystemApp.core.data.Planets
+import com.banuharshavardhan.SolarSystemApp.core.models.Planet
 
 @Composable
 fun GridSection(
-    navController: NavController,
-    resources: PlanetSceneResources
+    resources: PlanetSceneResources,
+    onClick: (Planet) -> Unit
 ) {
     BoxWithConstraints {
         val spacing = 16.dp
@@ -36,8 +37,11 @@ fun GridSection(
                             resources = resources,
                             planet = planet,
                             planetSize = cellWidth,
-                            navController = navController,
-                            modifier = Modifier.width(cellWidth)
+                            modifier = Modifier
+                                .width(cellWidth)
+                                .clickable {
+                                    onClick(planet)
+                                }
                         )
                     }
                 }
