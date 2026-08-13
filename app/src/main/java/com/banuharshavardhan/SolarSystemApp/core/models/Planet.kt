@@ -1,5 +1,7 @@
 package com.banuharshavardhan.SolarSystemApp.core.models
 
+import io.github.sceneview.math.Position
+
 data class Planet(
     val name: String,
     val description: String,
@@ -23,5 +25,10 @@ data class Planet(
     val discoveryYear: String,
 
     val planetType: String,
-    val atmosphere: String
+    val atmosphere: String,
+
+    val spaceRadius: Float,
+    val spaceOrbitRadius: Float,
+    val spaceOrbitSpeed: Float,
+    val spaceOrbitStartAngle: Float,
 )

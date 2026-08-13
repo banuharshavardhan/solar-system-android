@@ -23,7 +23,11 @@ object Planets {
         discoveredBy = "Known since ancient times",
         discoveryYear = "Prehistory",
         planetType = "Terrestrial Planet",
-        atmosphere = "Thin exosphere of Oxygen, Sodium, Hydrogen, Helium and Potassium"
+        atmosphere = "Thin exosphere of Oxygen, Sodium, Hydrogen, Helium and Potassium",
+        spaceRadius = 0.18f,
+        spaceOrbitRadius = 2.0f,
+        spaceOrbitSpeed = 1.60f,
+        spaceOrbitStartAngle = 20f
     )
 
     val venus = Planet(
@@ -44,7 +48,11 @@ object Planets {
         discoveredBy = "Known since ancient times",
         discoveryYear = "Prehistory",
         planetType = "Terrestrial Planet",
-        atmosphere = "Carbon Dioxide (96.5%), Nitrogen (3.5%)"
+        atmosphere = "Carbon Dioxide (96.5%), Nitrogen (3.5%)",
+        spaceRadius = 0.30f,
+        spaceOrbitRadius = 2.8f,
+        spaceOrbitSpeed = 1.25f,
+        spaceOrbitStartAngle = 145f
     )
 
     val earth = Planet(
@@ -65,7 +73,11 @@ object Planets {
         discoveredBy = "Known since ancient times",
         discoveryYear = "Prehistory",
         planetType = "Terrestrial Planet",
-        atmosphere = "Nitrogen (78%), Oxygen (21%), Argon, Carbon Dioxide"
+        atmosphere = "Nitrogen (78%), Oxygen (21%), Argon, Carbon Dioxide",
+        spaceRadius = 0.32f,
+        spaceOrbitRadius = 3.7f,
+        spaceOrbitSpeed = 1.00f,
+        spaceOrbitStartAngle = 260f
     )
 
     val mars = Planet(
@@ -86,7 +98,11 @@ object Planets {
         discoveredBy = "Known since ancient times",
         discoveryYear = "Prehistory",
         planetType = "Terrestrial Planet",
-        atmosphere = "Carbon Dioxide (95%), Nitrogen, Argon"
+        atmosphere = "Carbon Dioxide (95%), Nitrogen, Argon",
+        spaceRadius = 0.24f,
+        spaceOrbitRadius = 4.6f,
+        spaceOrbitSpeed = 0.80f,
+        spaceOrbitStartAngle = 65f
     )
 
     val jupiter = Planet(
@@ -107,7 +123,11 @@ object Planets {
         discoveredBy = "Known since ancient times",
         discoveryYear = "Prehistory",
         planetType = "Gas Giant",
-        atmosphere = "Hydrogen (90%), Helium (10%)"
+        atmosphere = "Hydrogen (90%), Helium (10%)",
+        spaceRadius = 0.90f,
+        spaceOrbitRadius = 6.0f,
+        spaceOrbitSpeed = 0.45f,
+        spaceOrbitStartAngle = 190f
     )
 
     val saturn = Planet(
@@ -128,7 +148,11 @@ object Planets {
         discoveredBy = "Known since ancient times",
         discoveryYear = "Prehistory",
         planetType = "Gas Giant",
-        atmosphere = "Hydrogen (96%), Helium (3%)"
+        atmosphere = "Hydrogen (96%), Helium (3%)",
+        spaceRadius = 0.75f,
+        spaceOrbitRadius = 7.4f,
+        spaceOrbitSpeed = 0.32f,
+        spaceOrbitStartAngle = 330f
     )
 
     val uranus = Planet(
@@ -149,7 +173,11 @@ object Planets {
         discoveredBy = "William Herschel",
         discoveryYear = "1781",
         planetType = "Ice Giant",
-        atmosphere = "Hydrogen, Helium, Methane"
+        atmosphere = "Hydrogen, Helium, Methane",
+        spaceRadius = 0.55f,
+        spaceOrbitRadius = 8.7f,
+        spaceOrbitSpeed = 0.22f,
+        spaceOrbitStartAngle = 105f
     )
 
     val neptune = Planet(
@@ -170,7 +198,11 @@ object Planets {
         discoveredBy = "Johann Galle",
         discoveryYear = "1846",
         planetType = "Ice Giant",
-        atmosphere = "Hydrogen, Helium, Methane"
+        atmosphere = "Hydrogen, Helium, Methane",
+        spaceRadius = 0.52f,
+        spaceOrbitRadius = 10.0f,
+        spaceOrbitSpeed = 0.16f,
+        spaceOrbitStartAngle = 220f
     )
 
     val all = listOf(

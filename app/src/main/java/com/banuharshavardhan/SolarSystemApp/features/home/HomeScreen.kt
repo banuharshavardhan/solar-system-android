@@ -87,8 +87,9 @@ fun HomeScreen(
                         )
                     }
                 }
-
-                HomeSection.SPACE -> SpaceSection()
+                HomeSection.SPACE -> SpaceSection(
+                    resources
+                )
                 HomeSection.LIST -> {
                     if (!isNavigatingToDetail) {
                         ListSection(
